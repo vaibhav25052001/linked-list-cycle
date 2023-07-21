@@ -1,0 +1,16 @@
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+        if(head==NULL || head->next==NULL)
+        return NULL;
+        ListNode *forw=head;
+        ListNode *prev=head;
+        while(forw && forw->next){
+            forw=forw->next->next;
+            if(forw==prev)
+            return true;
+            prev=prev->next;
+        }
+        return false;
+    }
+};
